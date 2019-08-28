@@ -38,3 +38,4 @@ If you click on edit in browser, the url will change to the edit mode, and if yo
 **References**
 - [WOPI documentation](https://wopi.readthedocs.io/en/latest/)
 - [WOPI validator](https://wopi.readthedocs.io/en/latest/build_test_ship/validator.html#validator)
+- [WOPI Fiddler inspector](https://github.com/OfficeDev/Office-Inspectors-for-Fiddler)
