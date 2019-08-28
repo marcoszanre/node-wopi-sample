@@ -2,16 +2,16 @@
 A sample WOPI host in nodejs and express.
 
 ### How to setup this sample:
-1. Deploy Office Online Server
-2. Install nodejs (can be in the same machine)
-3. Git clone this repo to a desired folder
-4. From PowerShell, run npm install
-5. Change your directory to the cloned repository and run "npm index.js" (now the server will start and listen on port 8080)
+1. Deploy [Office Online Server](https://docs.microsoft.com/en-us/officeonlineserver/deploy-office-online-server)
+2. Install Node.js (can be in the same machine)
+3. Git clone this repo
+4. From PowerShell, run **npm install**
+5. Change your directory to the cloned repository and run **npm index.js** (now the server will start and listen on port 8080)
 
 ### How to test this sample
 This sample already includes a folder (./files) with a docx file (test.docx) that can be used for testing viewing and editing capabilities.
 
-After making sure that Office Online Server is running, take note of the desired urlsrc in the discovery page (**http://[office online server ip addresss or hostname]/hosting/discovery**), like the following docx for viewing:
+After making sure that Office Online Server is running, take note of the desired *urlsrc* in the discovery page (**http://[OOS]/hosting/discovery**), like in the following docx for viewing:
 
 http://wopi.contoso.com/wv/wordviewerframe.aspx?
 
