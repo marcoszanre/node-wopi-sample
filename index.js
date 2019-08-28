@@ -6,7 +6,7 @@ const app = express();
 var rawBodyParser = require('raw-body-parser');
 app.use(rawBodyParser());
 
-//10.2.0.6/wopi/files/Governance.pdf
+// CHECK FILE INFO - EX: http://[OOS]/wopi/files/test.docx
 app.get('/wopi/files/:file_id', function (req, res) {
     const stats = fs.statSync(path.join(__dirname, '/files', `${req.params.file_id}`));
     const fileSizeInBytes = stats["size"];
@@ -26,13 +26,13 @@ app.get('/wopi/files/:file_id', function (req, res) {
     );
 });
 
-//10.2.0.6/wopi/files/Governance.pdf/contents
+// GET FILE - EX: http://[OOS]/wopi/files/test.docx/contents
 app.get('/wopi/files/:file_id/contents', function (req, res) {
     const data = fs.readFileSync(path.join(__dirname, '/files', `${req.params.file_id}`));
     res.send(data);
 });
 
-//LOCK UNLOCK
+//LOCK UNLOCK AND REFRESH LOCK
 app.post('/wopi/files/:file_id', function (req, res) {
     if (
         (req.header('X-WOPI-Override') == 'LOCK') ||
@@ -54,4 +54,5 @@ app.post('/wopi/files/:file_id/contents', function (req, res) {
 
 app.listen(process.env.PORT || 8080, () => {
     console.log('up and running');
+    console.log('this is your wopi default file url: http://localhost:8080/wopi/files/test.docx')
 });
